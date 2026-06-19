@@ -9,7 +9,7 @@ const TRIP = {
   subtitle: "雪梨之旅",
   tagline: "Buon Viaggio",
   year: 2026,
-  currency: { code: "AUD", rateToTWD: 21 }, // rough AUD -> TWD for the wallet helper
+  currency: { code: "AUD", target: "HKD", rate: 5.1 }, // rough AUD -> HKD for the wallet helper
 
   days: [
     /* ---------------------------------------------------------------- DAY 1 */

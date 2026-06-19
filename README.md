@@ -10,7 +10,7 @@ backend, no build step, no dependencies.
 - **行程 / Plans** — full day-by-day timeline grouped by Breakfast → Night, with
   weather, booking chips, and hotel for each night
 - **地圖 / Map** — every place across the trip, one tap to open in Google Maps
-- **記帳 / Wallet** — live AUD → TWD converter
+- **記帳 / Wallet** — live AUD → HKD converter
 - **景點 / Saved** — backup / wishlist spots not yet scheduled
 - Swipeable date pills + progress rail; auto-selects the current day
 
@@ -26,7 +26,7 @@ python3 -m http.server 8000
 ## Editing the trip
 
 All trip content lives in **`js/data.js`** — edit titles, times, notes,
-`booked` flags, the `saved` list, and the `rateToTWD` exchange rate there.
+`booked` flags, the `saved` list, and the `currency.rate` exchange rate there.
 No rebuild needed; just refresh.
 
 ## Do we need a server? — No.

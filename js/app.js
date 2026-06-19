@@ -168,16 +168,16 @@ function viewMap() {
 }
 
 function viewWallet() {
-  const r = TRIP.currency.rateToTWD;
+  const c = TRIP.currency;
   return `<div class="section-head"><h2>匯率換算</h2>
-    <span class="more">AUD → TWD</span></div>
+    <span class="more">${c.code} → ${c.target}</span></div>
     <div class="card">
       <div class="amount-row">
-        <input id="aud-in" type="number" inputmode="decimal" placeholder="Amount in AUD" value="100" />
+        <input id="aud-in" type="number" inputmode="decimal" placeholder="Amount in ${c.code}" value="100" />
       </div>
       <div class="convert-out">
         <div class="big" id="twd-out">—</div>
-        <div class="sub">≈ TWD · rate 1 AUD = ${r} TWD</div>
+        <div class="sub">≈ ${c.target} · rate 1 ${c.code} = ${c.rate} ${c.target}</div>
       </div>
     </div>
     <p class="t-note" style="text-align:center">Edit the rate in <b>js/data.js</b> before the trip.</p>`;
@@ -222,7 +222,7 @@ function render() {
     const calc = () => {
       const v = parseFloat(inp.value || 0);
       $("#twd-out").textContent = isFinite(v)
-        ? "$" + Math.round(v * TRIP.currency.rateToTWD).toLocaleString() : "—";
+        ? "$" + (v * TRIP.currency.rate).toLocaleString(undefined, { maximumFractionDigits: 1 }) : "—";
     };
     inp.addEventListener("input", calc); calc();
   }
