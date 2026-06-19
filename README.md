@@ -27,9 +27,17 @@ python3 -m http.server 8000
 
 ## Editing the trip
 
-All trip content lives in **`js/data.js`** — edit titles, times, notes,
-`booked` flags, the `saved` list, and the `currency.rate` exchange rate there.
-No rebuild needed; just refresh.
+Two ways:
+
+1. **In-app Editor (no code).** Tap the **⚙️ gear** (top-right) to open the
+   editor. Add/edit days and stops, weather, hotels, booking flags, and saved
+   spots. Changes **save to your browser automatically** and show instantly.
+   - **Export data.js** downloads a commit-ready file — replace `js/data.js`
+     with it and push to publish your edits for everyone.
+   - **Import file** loads a previously exported `data.js` / `.json`.
+   - **Reset to default** restores the original seed itinerary.
+2. **Edit the seed directly.** `js/data.js` holds `window.DEFAULT_TRIP` — the
+   starting template. Edit and push; it's the fallback when no local edits exist.
 
 ## Do we need a server? — No.
 
